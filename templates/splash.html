@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="refresh" content="3;url=/guide">
+
+  <title>Calorie Buddy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Simple fade-in and fade-out */
+    .fade-out {
+      animation: fadeOut 1s ease-in-out forwards;
+    }
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+  </style>
+</head>
+<body class="bg-white flex items-center justify-center h-screen">
+  <div id="splash" class="text-center">
+    <img src="static/images/Calorie-logo.png" alt="Calorie Buddy Logo" class="w-30 h-24 mx-auto mb-4 animate-bounce">
+    <h1 class="text-2xl font-bold text-gray-800">Calorie Buddy</h1>
+    <p class="text-sm text-gray-500 mt-2">Track. Eat. Stay Healthy.</p>
+  </div>
+
+  <script>
+    // Redirect after 3 seconds
+    setTimeout(() => {
+      document.getElementById('splash').classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = "/dashboard";  // change this to "/dashboard" if already logged in
+      }, 1000);
+    }, 2000);
+  </script>
+</body>
+</html>
